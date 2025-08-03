@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tarini Pabbareddy">
+  <meta name="description" content="Guessing Game">
+  <meta name="keywords" content="Guess, Guessing, Game">
+  <title>Guessing Game</title>
+</head>
+<body>
+  <script>
+const randomNumber = Math.floor(Math.random() * 10) +1;
+  console.log(randomNumber);
+    let guess = "";
+    let Guesses = 0;
+
+    do {
+      guess = parseInt(prompt("Guess the number between 1 and 10:"));
+      numberOfGuesses += 1;
+      if (guess > randomNumber) {
+        alert("Your guess is too high. Try again.");
+      } else if (guess < randomNumber) {
+        alert("Your guess is too low. Try again.");
+      } else if (guess === randomNumber) {
+        alert(`Your guess is correct! You made ${Guesses} guesses.`);
+      }
+    } while (guess !== randomNumber);
+  </script>
+</body>
