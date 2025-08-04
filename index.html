@@ -9,21 +9,21 @@
 </head>
 <body>
   <script>
-const randomNumber = Math.floor(Math.random() * 10) +1;
+  const randomNumber = Math.floor(Math.random() * 10) +1;
   console.log(randomNumber);
-    let guess = "";
-    let Guesses = 0;
+    let guess = parseInt(prompt("Guess the Number between 1 and 10:"));
+    let Guesses = 1;
 
-    do {
-      guess = parseInt(prompt("Guess the number between 1 and 10:"));
-      numberOfGuesses += 1;
+    while(guess !== randomNumber){
       if (guess > randomNumber) {
-        alert("Your guess is too high. Try again.");
+        guess = parseInt(prompt("Your guess is too high, guess again."));
+        Guesses += 1;
       } else if (guess < randomNumber) {
-        alert("Your guess is too low. Try again.");
-      } else if (guess === randomNumber) {
-        alert(`Your guess is correct! You made ${Guesses} guesses.`);
+        guess = parseInt(prompt("Your guess is too low, guess again."));
+        Guesses += 1;
       }
-    } while (guess !== randomNumber);
+    }
+
+    prompt(`You guessed it in ${Guesses} guesses!`)
   </script>
 </body>
